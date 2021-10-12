@@ -3,7 +3,6 @@ import styles from './FeedPhotosItem.module.css';
 
 const FeedPhotosItem = ({ photo, setModalPhoto }) => {
   function handleClick() {
-    console.log(photo)
     setModalPhoto(photo)
   }
 

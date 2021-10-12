@@ -28,7 +28,6 @@ export const UserStorage = ({ children }) => {
     const json = await response.json();
     setData(json);
     setLogin(true);
-    console.log(json);
   }
 
   async function userLogin(username, password) {
@@ -37,7 +36,7 @@ export const UserStorage = ({ children }) => {
       setLoading(true)
       const { url, options } = TOKEN_POST({ username, password });
       const tokenRes = await fetch(url, options);
-      console.log(tokenRes);
+  
       if (!tokenRes.ok) throw new Error('Usuário desconhecido, verifique os dados e tente novamente.');
 
       const { token } = await tokenRes.json();
