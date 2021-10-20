@@ -7,14 +7,14 @@ import UserPhotoPost from './UserPhotoPost';
 import UserStats from './UserStats';
 
 const User = () => {
-  const {login} = useContext(UserContext);
+  const {data, login} = useContext(UserContext);
   
   if (login === true) {
     return (
       <section className="container">
         <UserHeader />
         <Routes>
-          <Route path="/" element={<Feed />} />
+          <Route path="/" element={<Feed user={data.id} />} />
           <Route path="statistics" element={<UserStats />} />
           <Route path="post" element={<UserPhotoPost />} />
         </Routes>
